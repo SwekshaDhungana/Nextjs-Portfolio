@@ -9,6 +9,20 @@ export type NavigationItem = {
   href: "#home" | "#projects" | "#skills" | "#about" | "#contact";
 };
 
+export type HeroAction = {
+  label: string;
+  href: string;
+  external?: boolean;
+  variant: "primary" | "secondary";
+};
+
+export type HeroContent = {
+  name: string;
+  title: string;
+  subtitle: string;
+  actions: readonly HeroAction[];
+};
+
 type SectionCard = {
   title: string;
   description: string;
@@ -30,29 +44,24 @@ export const navigationItems: readonly NavigationItem[] = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const homeContent = {
-  eyebrow: "Developer Portfolio",
-  title: "A minimal, responsive foundation for presenting modern web work.",
-  description:
-    "This landing page keeps the structure clean: a sticky top navigation, reusable sections, and enough spacing and typography to scale into a full portfolio without reworking the layout.",
-  highlights: [
+export const heroContent: HeroContent = {
+  name: "[REPLACE WITH MY NAME]",
+  title: "Full Stack Developer",
+  subtitle: "I build scalable web apps with MERN and AI",
+  actions: [
     {
-      title: "App Router Ready",
-      description:
-        "The page is structured for server-first composition while keeping interactive navigation isolated to a small client component.",
+      label: "View Projects",
+      href: "#projects",
+      variant: "primary",
     },
     {
-      title: "Reusable Sections",
-      description:
-        "Each anchor target is built from shared components so content can expand without duplicating layout code.",
+      label: "GitHub",
+      href: "https://github.com/",
+      external: true,
+      variant: "secondary",
     },
-    {
-      title: "Responsive Navigation",
-      description:
-        "Desktop links stay visible, while mobile users get a compact hamburger menu with the same section anchors.",
-    },
-  ] as const,
-} as const;
+  ],
+};
 
 export const portfolioSections: readonly PortfolioSection[] = [
   {
