@@ -1,4 +1,4 @@
-export const siteConfig = {
+﻿export const siteConfig = {
   name: "Developer Portfolio",
   description:
     "Responsive portfolio scaffold built with Next.js App Router and Tailwind CSS.",
@@ -29,7 +29,7 @@ type SectionCard = {
 };
 
 type PortfolioSection = {
-  id: "projects" | "skills" | "about" | "contact";
+  id: "skills" | "about" | "contact";
   eyebrow: string;
   title: string;
   description: string;
@@ -64,25 +64,6 @@ export const heroContent: HeroContent = {
 };
 
 export const portfolioSections: readonly PortfolioSection[] = [
-  {
-    id: "projects",
-    eyebrow: "Selected Work",
-    title: "Projects",
-    description:
-      "Use this section to highlight case studies, product impact, and the kinds of problems you solve across frontend and backend systems.",
-    cards: [
-      {
-        title: "Featured Builds",
-        description:
-          "Reserve space here for flagship applications, screenshots, and concise project summaries with measurable outcomes.",
-      },
-      {
-        title: "Implementation Notes",
-        description:
-          "Document the stack, constraints, and architecture decisions behind each project so the portfolio stays useful to technical readers.",
-      },
-    ],
-  },
   {
     id: "skills",
     eyebrow: "Capabilities",

@@ -1,4 +1,4 @@
-import {
+﻿import {
   ContentCard,
   Navbar,
   PageShell,
@@ -11,12 +11,14 @@ import {
   siteConfig,
 } from "@/data";
 import { HeroSection } from "./hero-section";
+import { ProjectsSection } from "./projects-section";
 
 export function LandingPage() {
   return (
     <PageShell header={<Navbar brand={siteConfig.name} items={navigationItems} />}>
       <h1 className="sr-only">{siteConfig.name}</h1>
       <HeroSection content={heroContent} />
+      <ProjectsSection />
 
       {portfolioSections.map((section) => (
         <SectionBlock
