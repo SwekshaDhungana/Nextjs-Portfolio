@@ -1,13 +1,15 @@
 type PageShellProps = {
+  header?: React.ReactNode;
   children: React.ReactNode;
 };
 
-export function PageShell({ children }: PageShellProps) {
+export function PageShell({ header, children }: PageShellProps) {
   return (
-    <main className="min-h-screen">
-      <div className="mx-auto flex w-full max-w-7xl flex-col px-6 py-16 sm:px-10 lg:px-12">
+    <div className="min-h-screen bg-zinc-50 text-zinc-950">
+      {header}
+      <main className="mx-auto flex w-full max-w-6xl flex-col px-6 pb-16 pt-6 sm:px-10 sm:pb-20 sm:pt-8 lg:px-12">
         {children}
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
