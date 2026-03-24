@@ -1,6 +1,5 @@
 # Portfolio
 
-Minimal Next.js App Router scaffold prepared for a landing page. The project uses Tailwind CSS v4 and keeps the initial app structure intentionally small so sections and features can be added without refactoring the foundation.
 
 ## Scripts
 
