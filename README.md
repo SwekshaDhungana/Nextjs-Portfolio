@@ -28,15 +28,3 @@ npm run dev
 ```
 
 Then open `http://localhost:3000`.
-
-## Useful files
-
-- `src/data/` holds most of the content shown on the site
-- `src/sections/landing/` contains the page sections
-- `public/Sweksha-Dhungana-Resume.pdf` is the file used by the resume download button
-- `src/data/contact.ts` contains the Formspree endpoint and contact links
-
-## Notes
-
-- If I want to update the resume, I can replace the PDF in `public/` with the same filename
-- If I want to change the text on the site, most of it can be edited from the files in `src/data/`
