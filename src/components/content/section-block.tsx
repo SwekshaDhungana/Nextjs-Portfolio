@@ -1,3 +1,5 @@
+﻿import { FadeInView } from "../motion";
+
 type SectionBlockProps = {
   id: string;
   eyebrow: string;
@@ -17,17 +19,17 @@ export function SectionBlock({
 }: SectionBlockProps) {
   return (
     <section id={id} className={`scroll-mt-24 py-16 sm:py-20 ${className ?? ""}`}>
-      <div className="max-w-2xl">
-        <p className="text-sm font-medium uppercase tracking-[0.24em] text-zinc-500">
+      <FadeInView className="max-w-3xl">
+        <p className="font-[family:var(--font-label)] text-[0.72rem] font-medium uppercase tracking-[0.24em] text-[#d7a26f]">
           {eyebrow}
         </p>
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+        <h2 className="mt-4 text-3xl font-semibold text-[var(--text-primary)] sm:text-4xl lg:text-[2.9rem]">
           {title}
         </h2>
-        <p className="mt-4 text-base leading-8 text-zinc-600 sm:text-lg">
+        <p className="mt-4 max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
           {description}
         </p>
-      </div>
+      </FadeInView>
       {children ? <div className="mt-10">{children}</div> : null}
     </section>
   );

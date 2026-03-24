@@ -1,17 +1,10 @@
-﻿import {
-  ContentCard,
-  Navbar,
-  PageShell,
-  SectionBlock,
-} from "@/components";
-import {
-  heroContent,
-  navigationItems,
-  portfolioSections,
-  siteConfig,
-} from "@/data";
+import { Navbar, PageShell } from "@/components";
+import { heroContent, navigationItems, siteConfig } from "@/data";
+import { AboutSection } from "./about-section";
+import { ContactSection } from "./contact-section";
 import { HeroSection } from "./hero-section";
 import { ProjectsSection } from "./projects-section";
+import { SkillsSection } from "./skills-section";
 
 export function LandingPage() {
   return (
@@ -19,27 +12,9 @@ export function LandingPage() {
       <h1 className="sr-only">{siteConfig.name}</h1>
       <HeroSection content={heroContent} />
       <ProjectsSection />
-
-      {portfolioSections.map((section) => (
-        <SectionBlock
-          key={section.id}
-          id={section.id}
-          eyebrow={section.eyebrow}
-          title={section.title}
-          description={section.description}
-          className="border-t border-zinc-200"
-        >
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {section.cards.map((card) => (
-              <ContentCard
-                key={`${section.id}-${card.title}`}
-                title={card.title}
-                description={card.description}
-              />
-            ))}
-          </div>
-        </SectionBlock>
-      ))}
+      <SkillsSection />
+      <AboutSection />
+      <ContactSection />
     </PageShell>
   );
 }

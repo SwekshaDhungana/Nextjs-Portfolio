@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import type { NavigationItem } from "@/data";
@@ -21,8 +21,8 @@ function NavLink({ item, mobile = false, onNavigate }: NavLinkProps) {
       onClick={onNavigate}
       className={
         mobile
-          ? "block rounded-2xl px-4 py-3 text-base font-medium text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-950"
-          : "text-sm font-medium text-zinc-600 transition hover:text-zinc-950"
+          ? "block rounded-[1.4rem] border border-transparent px-4 py-3 text-base font-medium text-[var(--text-secondary)] transition hover:border-[var(--border)] hover:bg-white/[0.03] hover:text-[var(--text-primary)]"
+          : "font-[family:var(--font-label)] text-[0.72rem] uppercase tracking-[0.22em] text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
       }
     >
       {item.label}
@@ -42,12 +42,12 @@ export function Navbar({ brand, items }: NavbarProps) {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[#140f0e]/88 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10 lg:px-12">
         <a
           href="#home"
           onClick={handleNavigate}
-          className="text-sm font-semibold uppercase tracking-[0.28em] text-zinc-950"
+          className="font-[family:var(--font-label)] text-[0.78rem] font-semibold uppercase tracking-[0.28em] text-[var(--text-primary)]"
         >
           {brand}
         </a>
@@ -64,7 +64,7 @@ export function Navbar({ brand, items }: NavbarProps) {
           aria-expanded={open}
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           onClick={handleToggle}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-950 shadow-sm shadow-zinc-950/5 transition hover:border-zinc-300 md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-white/[0.03] text-[var(--text-primary)] shadow-[0_12px_26px_rgba(0,0,0,0.22)] transition hover:border-[rgba(203,92,50,0.5)] hover:bg-white/[0.06] md:hidden"
         >
           <span className="relative h-4 w-4">
             <span
@@ -90,16 +90,11 @@ export function Navbar({ brand, items }: NavbarProps) {
         <nav
           id="mobile-navigation"
           aria-label="Mobile navigation"
-          className="border-t border-zinc-200 bg-white px-6 py-4 sm:px-10 md:hidden"
+          className="border-t border-[var(--border)] bg-[#191210]/96 px-6 py-4 backdrop-blur-md sm:px-10 md:hidden"
         >
           <div className="mx-auto max-w-6xl space-y-2">
             {items.map((item) => (
-              <NavLink
-                key={item.href}
-                item={item}
-                mobile
-                onNavigate={handleNavigate}
-              />
+              <NavLink key={item.href} item={item} mobile onNavigate={handleNavigate} />
             ))}
           </div>
         </nav>

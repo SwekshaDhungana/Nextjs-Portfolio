@@ -1,7 +1,19 @@
 ﻿export const siteConfig = {
-  name: "Developer Portfolio",
+  name: "SWEKSHA DHUNGANA",
+} as const;
+
+export const seoConfig = {
+  title: "SWEKSHA DHUNGANA | Full Stack Developer",
   description:
-    "Responsive portfolio scaffold built with Next.js App Router and Tailwind CSS.",
+    "Portfolio of Sweksha Dhungana, a Full Stack Developer building scalable web apps with MERN, Next.js, and AI.",
+  keywords: [
+    "Full Stack Developer",
+    "MERN Developer",
+    "Next.js Portfolio",
+    "React Developer",
+    "Node.js Developer",
+    "AI Developer",
+  ],
 } as const;
 
 export type NavigationItem = {
@@ -13,7 +25,19 @@ export type HeroAction = {
   label: string;
   href: string;
   external?: boolean;
+  download?: boolean | string;
   variant: "primary" | "secondary";
+};
+
+export type HeroNoteItem = {
+  label: string;
+  value: string;
+};
+
+export type HeroNote = {
+  label: string;
+  headline: string;
+  items: readonly HeroNoteItem[];
 };
 
 export type HeroContent = {
@@ -21,19 +45,7 @@ export type HeroContent = {
   title: string;
   subtitle: string;
   actions: readonly HeroAction[];
-};
-
-type SectionCard = {
-  title: string;
-  description: string;
-};
-
-type PortfolioSection = {
-  id: "skills" | "about" | "contact";
-  eyebrow: string;
-  title: string;
-  description: string;
-  cards: readonly SectionCard[];
+  note: HeroNote;
 };
 
 export const navigationItems: readonly NavigationItem[] = [
@@ -45,9 +57,10 @@ export const navigationItems: readonly NavigationItem[] = [
 ];
 
 export const heroContent: HeroContent = {
-  name: "[REPLACE WITH MY NAME]",
+  name: "SWEKSHA DHUNGANA",
   title: "Full Stack Developer",
-  subtitle: "I build scalable web apps with MERN and AI",
+  subtitle:
+    "Computer engineering graduate building web apps with MERN, Next.js, and modern APIs.",
   actions: [
     {
       label: "View Projects",
@@ -55,75 +68,26 @@ export const heroContent: HeroContent = {
       variant: "primary",
     },
     {
+      label: "Download Resume",
+      href: "/Sweksha-Dhungana-Resume.pdf",
+      download: "Sweksha-Dhungana-Resume.pdf",
+      variant: "secondary",
+    },
+    {
       label: "GitHub",
-      href: "https://github.com/",
+      href: "https://github.com/SwekshaDhungana",
       external: true,
       variant: "secondary",
     },
   ],
+  note: {
+    label: "Sweksha / in short",
+    headline:
+      "I believe curiosity is the spark that keeps me growing, both in work and in life.",
+    items: [
+      { label: "College", value: "Khwopa Engineering College" },
+      { label: "Recent work", value: "Jobora + ThinkBoard" },
+      { label: "Working with", value: "MERN, Next.js, Docker" },
+    ],
+  },
 };
-
-export const portfolioSections: readonly PortfolioSection[] = [
-  {
-    id: "skills",
-    eyebrow: "Capabilities",
-    title: "Skills",
-    description:
-      "Group your strengths by area so visitors can scan the stack quickly and understand how you contribute across the delivery lifecycle.",
-    cards: [
-      {
-        title: "Frontend",
-        description:
-          "Next.js, React, TypeScript, Tailwind CSS, and component-driven systems for accessible user interfaces.",
-      },
-      {
-        title: "Backend",
-        description:
-          "APIs, database-backed applications, authentication flows, and pragmatic service design for product delivery.",
-      },
-      {
-        title: "Workflow",
-        description:
-          "Testing, code review, CI, deployment, and the engineering practices that keep a project maintainable as it grows.",
-      },
-    ],
-  },
-  {
-    id: "about",
-    eyebrow: "Profile",
-    title: "About",
-    description:
-      "This section can carry a brief professional summary, your working style, and the kinds of teams or products you are best suited for.",
-    cards: [
-      {
-        title: "Approach",
-        description:
-          "Focus on building reliable interfaces, reducing complexity, and keeping systems understandable for the next engineer.",
-      },
-      {
-        title: "Collaboration",
-        description:
-          "Create room for communication around tradeoffs, delivery scope, and technical quality so teams can move with clarity.",
-      },
-    ],
-  },
-  {
-    id: "contact",
-    eyebrow: "Get In Touch",
-    title: "Contact",
-    description:
-      "Keep a clear path for outreach. Add your preferred channels here so hiring teams, clients, or collaborators know how to reach you.",
-    cards: [
-      {
-        title: "Email",
-        description:
-          "Add a primary contact address for project inquiries, hiring conversations, and portfolio feedback.",
-      },
-      {
-        title: "Professional Links",
-        description:
-          "Link to your LinkedIn, GitHub, or resume when you are ready to attach real destinations to the layout.",
-      },
-    ],
-  },
-] as const;

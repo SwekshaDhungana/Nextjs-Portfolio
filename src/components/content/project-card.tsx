@@ -1,5 +1,8 @@
-﻿import { ActionLink } from "./action-link";
+﻿"use client";
+
+import { motion } from "framer-motion";
 import type { Project } from "@/data";
+import { ActionLink } from "./action-link";
 
 type ProjectCardProps = {
   project: Project;
@@ -7,20 +10,31 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="flex h-full flex-col rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm shadow-zinc-950/5 transition-transform duration-300 ease-out hover:scale-[1.02] hover:shadow-md">
+    <motion.article
+      whileHover={{ y: -4, scale: 1.01 }}
+      transition={{ duration: 0.22, ease: "easeOut" }}
+      className="flex h-full flex-col rounded-[1.9rem] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_18px_42px_rgba(0,0,0,0.22)] transition-colors hover:border-[#dd7b4d]/45"
+    >
       <div className="flex-1">
-        <h3 className="text-xl font-semibold tracking-tight text-zinc-950">
+        <p className="font-[family:var(--font-label)] text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-[#d7a26f]">
+          Case Study
+        </p>
+        <h3 className="mt-4 text-2xl font-semibold text-[var(--text-primary)]">
           {project.title}
         </h3>
 
-        <div className="mt-5 space-y-4 text-sm leading-7 text-zinc-600">
+        <div className="mt-5 space-y-4 text-sm leading-7 text-[var(--text-secondary)]">
           <p>
-            <span className="font-semibold text-zinc-950">Problem:</span>{" "}
-            {project.problem}
+            <span className="font-[family:var(--font-label)] text-[0.68rem] uppercase tracking-[0.22em] text-[var(--text-primary)]">
+              Problem
+            </span>
+            <span className="ml-3">{project.problem}</span>
           </p>
           <p>
-            <span className="font-semibold text-zinc-950">Solution:</span>{" "}
-            {project.solution}
+            <span className="font-[family:var(--font-label)] text-[0.68rem] uppercase tracking-[0.22em] text-[var(--text-primary)]">
+              Solution
+            </span>
+            <span className="ml-3">{project.solution}</span>
           </p>
         </div>
 
@@ -28,7 +42,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700"
+              className="rounded-full border border-[var(--border)] bg-[#211917] px-3 py-1 font-[family:var(--font-label)] text-[0.68rem] uppercase tracking-[0.16em] text-[#e5d8c4]"
             >
               {tech}
             </span>
@@ -44,6 +58,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
           GitHub
         </ActionLink>
       </div>
-    </article>
+    </motion.article>
   );
 }
