@@ -40,4 +40,3 @@ Then open `http://localhost:3000`.
 
 - If I want to update the resume, I can replace the PDF in `public/` with the same filename
 - If I want to change the text on the site, most of it can be edited from the files in `src/data/`
-
