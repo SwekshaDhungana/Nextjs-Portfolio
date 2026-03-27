@@ -69,9 +69,10 @@ export const heroContent: HeroContent = {
     },
     {
       label: "Download Resume",
-      href: "/Sweksha-Dhungana-Resume.pdf",
+      href: "/Sweksha_Dhungana_CV_.pdf",
       download: "Sweksha-Dhungana-Resume.pdf",
       variant: "secondary",
+      external: false,
     },
     {
       label: "GitHub",

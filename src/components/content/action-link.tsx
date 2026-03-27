@@ -25,7 +25,10 @@ export function ActionLink({
   return (
     <motion.a
       href={href}
-      download={download}
+      // download={download}
+      // target={external ? "_blank" : undefined}
+      // rel={external ? "noreferrer noopener" : undefined}
+      download={download && !external ? download : undefined} // only add download if not external
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer noopener" : undefined}
       whileHover={{ y: -2, scale: 1.01 }}
