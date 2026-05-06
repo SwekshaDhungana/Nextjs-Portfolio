@@ -81,3 +81,91 @@ textarea,
 button {
   font: inherit;
 }
+
+.projects-carousel {
+  padding: 0 0 0.5rem;
+}
+
+.projects-carousel__item {
+  display: flex;
+}
+
+.projects-carousel__track {
+  align-items: stretch;
+}
+
+.projects-carousel__arrow {
+  display: inline-flex;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.projects-carousel__arrow:hover:not(:disabled) {
+  border-color: rgba(221, 123, 77, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.projects-carousel__arrow:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.projects-carousel__arrow--right {
+  border-color: rgba(221, 123, 77, 0.6);
+  background: var(--accent);
+  color: #1b120f;
+}
+
+.projects-carousel__arrow--right:hover:not(:disabled) {
+  background: #dc6f42;
+}
+
+.projects-carousel__dots {
+  bottom: 0;
+  gap: 0.55rem;
+}
+
+.projects-carousel__dots .react-multi-carousel-dot {
+  display: inline-flex;
+}
+
+.projects-carousel__dots .react-multi-carousel-dot button {
+  height: 0.72rem;
+  width: 0.72rem;
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.projects-carousel__dots .react-multi-carousel-dot--active button {
+  border-color: var(--accent);
+  background: var(--accent);
+  transform: scale(1.06);
+}
+
+@media (max-width: 767px) {
+  .projects-carousel {
+    padding-bottom: 0.25rem;
+  }
+
+  .projects-carousel__arrow {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+}

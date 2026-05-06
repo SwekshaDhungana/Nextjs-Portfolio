@@ -16,6 +16,16 @@ export type Project = {
 
 export const projects: readonly Project[] = [
   {
+    title: "Chat App",
+    problem:
+      "Most chat apps demos focus only on UI and miss real challenges like secure authentication, real-time messaging, media sharing, and online user presence.",
+    solution:
+      "I built Chatify, a full-stack real-time chat app with JWT auth, Socket.IO live messaging, image uploads, online status tracking, and persistent chat storage using React, Node.js, and MongoDB.",
+    techStack: ["Nodejs", "React", "MongoDB", "Tailwind CSS", "Socket.IO"],
+    liveUrl: "https://chatify-xnwe.onrender.com/",
+    githubUrl: "https://github.com/SwekshaDhungana/chatify",
+  },
+  {
     title: "ThinkBoard",
     problem:
       "Busy teams need a board that stays quick and responsive, even with frequent use.",
@@ -24,6 +34,23 @@ export const projects: readonly Project[] = [
     techStack: ["MongoDB", "Express", "React", "Node.js", "Redis", "Render"],
     liveUrl: "https://thinkboard-mern-0zci.onrender.com/",
     githubUrl: "https://github.com/SwekshaDhungana/ThinkBoard-mern",
+  },
+  {
+    title: "Inventory Management App",
+    problem: "Manual inventory tracking is slow and causes stock mistakes.",
+    solution:
+      "I built an inventory app where users can log in, manage products, and track stock with a simple dashboard.",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Prisma",
+      "Neon PostgreSQL",
+      "Neon Auth",
+    ],
+    liveUrl: "https://inventory-management-app-d9vk.vercel.app/",
+    githubUrl: "https://github.com/SwekshaDhungana/Inventory-Management-app",
   },
   {
     title: "Jobora",

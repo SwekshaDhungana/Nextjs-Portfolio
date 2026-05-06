@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { seoConfig } from "@/data";
+import "react-multi-carousel/lib/styles.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
