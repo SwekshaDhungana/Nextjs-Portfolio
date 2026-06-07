@@ -63,12 +63,21 @@ export const projects: readonly Project[] = [
     githubUrl: "https://github.com/SwekshaDhungana/job-track",
   },
   {
-    title: "Shopping Website",
-    problem: "Many shopping sites are slow, cluttered, or hard to navigate.",
+    title: "E-Commerce Platform",
+    problem:
+      "Online stores often have messy product browsing, weak cart flows, and insecure checkout handling.",
     solution:
-      "Added search, categories, and filters so users can find products easily.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://nextjs-shopping-website.vercel.app",
-    githubUrl: "https://github.com/SwekshaDhungana/Nextjs-Shopping-Website",
+      "Created a responsive e-commerce platform with product categories, cart and coupon features, admin tools, and secure Stripe checkout.",
+    techStack: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Stripe",
+      "Zustand",
+      "Tailwind CSS",
+    ],
+    liveUrl: "https://ecommerce-app-gm65.onrender.com/",
+    githubUrl: "https://github.com/SwekshaDhungana/ecommerce-app",
   },
 ] as const;
